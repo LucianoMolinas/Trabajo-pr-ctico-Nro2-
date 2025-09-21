@@ -5,8 +5,8 @@ function App() {
 
   return (
     <section>
-
       <Chat />
+      <Login />
     </section>
 
   )
