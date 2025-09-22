@@ -1,12 +1,11 @@
 
-import Chat from "../src/pages/Chat"
-import Login from "../src/pages/Login"
+import RouterApp from "./router/RouterApp"
 function App() {
 
   return (
     <section>
-      <Chat />
-      <Login />
+      <RouterApp />
+
     </section>
 
   )
