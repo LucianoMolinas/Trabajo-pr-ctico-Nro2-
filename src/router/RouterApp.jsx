@@ -1,26 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Chat from "../pages/Chat"
-import Login from "../pages/Login"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Login } from "../views/Login";
+import { Messages } from "../views/Message";
 
 const RouterApp = () => {
-
   return (
     <BrowserRouter>
-
       <Routes>
-
-
-        <Route path="/chat" element={<Chat />} />
-        <Route path="/login" element={<Login />} />
-
+        <Route path="/" element={<Login />} />
+        <Route path="/chat" element={<Messages />} />
       </Routes>
-
-
     </BrowserRouter>
-
-
-
   )
 }
 
-export default RouterApp
+export { RouterApp }
