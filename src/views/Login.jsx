@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import logo from "../assets/logo.png"
+import logo from "../assets/images/logo.png"
 
 const Login = () => {
   const [password, setPassword] = useState()
@@ -13,7 +13,7 @@ const Login = () => {
   // useState -> usando un estado
   // un estado es una variable que cuando cambiar se rerenderiza el componente
 
-  const PASS = "pepe123"
+  const PASS = "Newells"
 
   const validatePassword = () => {
     setMessage(null)
@@ -35,17 +35,17 @@ const Login = () => {
   }
 
   return (
-    <main>
+    <main className="login-main">
       <img width={100} src={logo} alt="logo de whatsapp" />
       <h1>Clon de Whatsapp</h1>
       <form onSubmit={handleSubmit}>
         <label>Contraseña de acceso</label>
-        <input type="text" onChange={(event) => setPassword(event.target.value)} />
+        <input placeholder="Ingrese la contraseña" type="text" onChange={(event) => setPassword(event.target.value)} />
         <button>Acceder</button>
         {message && <p style={{ color: "green" }}>{message}</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
-      <p>Acceso restringido • Contenido privado</p>
+      <p className="text-info"> Acceso restringido • Contenido privado</p>
     </main>
   )
 }
