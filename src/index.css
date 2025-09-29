@@ -30,6 +30,11 @@
 
 }
 
+.search-result {
+  text-align: center;
+  margin-top: 10px;
+  color: gray;
+}
 
 /* user list */
 
@@ -39,6 +44,8 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+
+
 }
 
 .user {
@@ -120,7 +127,6 @@
   cursor: pointer;
   font-size: 16px;
 
-
 }
 
 
@@ -129,17 +135,41 @@
   background-color: #fafafa;
   flex: 1;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
+.message {
+  background-color: rgb(206, 246, 255);
+  padding: 5px 10px;
+  border-radius: 8px;
+  align-self: flex-end;
+  max-width: 50%;
+}
+
+.message .time {
+  font-size: 9px;
+  display: block;
+  text-align: end;
+  color: #979797;
+}
+
 
 .chat-footer {
 
-  background-color: aqua;
+
   display: flex;
   padding: 10px;
   border-top: 1px solid #ddd;
   gap: 10px;
 }
 
+.chat-footer form {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+}
 
 .chat-footer input {
 
@@ -249,7 +279,7 @@ p {
   font-size: 13px;
 }
 
-.text-info {
+form.text-info {
 
   margin-top: 10px;
   font-size: 14px;

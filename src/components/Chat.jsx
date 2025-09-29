@@ -1,4 +1,26 @@
+import { useState } from "react"
+
 export default function Chat() {
+
+  const [msg, setMsg] = useState("")
+  const [messages, setMessages] = useState([])
+
+  const handleChange = (event) => {
+    setMsg(event.target.value)
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    const newMessage = {
+      id: crypto.randomUUID(),
+      text: msg,
+      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+    }
+
+    setMessages([...messages, newMessage])
+    setMsg("")
+  }
   return (
     <div className="chat">
       <header className="chat-header">
@@ -15,7 +37,7 @@ export default function Chat() {
         </div>
 
         <div className="chat-actions">
-          <button title="Font"><span>A</span></button>
+
           <button title="Camera">📷</button>
           <button title="Gallery">🖼️</button>
           <button title="Settings">⚙️</button>
@@ -25,18 +47,28 @@ export default function Chat() {
 
 
       <section className="chat-messages">
-        {[].map((m, i) => (
-          <div key={i} className={`message ${m.from}`}>
-            <p>{m.text}</p>
-            <span className="time">{m.time}</span>
-          </div>
-        ))}
+
+        {
+          messages.map((message) => <div className="message">
+            <p>{message.text}</p>
+            <span className="time">{message.time}</span>
+          </div>)
+        }
       </section>
 
       <footer className="chat-footer">
-        <input type="text" placeholder="Enter text here..." />
-        <button>➤</button>
+
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Enter text here..."
+            onChange={handleChange}
+            value={msg}
+          />
+          <button>➤</button>
+        </form>
       </footer>
     </div>
   )
+
 }
