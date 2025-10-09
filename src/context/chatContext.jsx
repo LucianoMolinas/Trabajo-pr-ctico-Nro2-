@@ -83,17 +83,8 @@ const ChatProvider = ({ children }) => {
     if (users.length > 0) {
       localStorage.setItem("users", JSON.stringify(users))
 
-
-
     }
   }, [users])
-
-
-
-
-
-
-
 
   return (
     <ChatContext.Provider value={{ users, setUsers, selectedUser, setSelectedUser }}>
