@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import logo from "../assets/images/logo.png"
 
@@ -13,11 +13,20 @@ const Login = () => {
 
   const PASS = "Newells"
 
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn")
+    if (isLoggedIn === "true") {
+      navigate("/chat")
+    }
+  }, [navigate])
+
+
   const validatePassword = () => {
     setMessage(null)
     setError(null)
 
     if (password === PASS) {
+      localStorage.setItem("isLoggedIn", "true")
       setMessage("Contraseña valida, serás redirigido.")
       setTimeout(() => {
         navigate("/chat")
@@ -50,7 +59,8 @@ const Login = () => {
         />
         <button
           onClick={handleShowPassword}
-          type="button">mostrar contraseña</button>
+          type="button"> Mostrar contraseña
+        </button>
 
         <button>Acceder</button>
         {message && <p style={{ color: "green" }}>{message}</p>}
