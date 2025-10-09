@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { useChat } from "../context/chatContext"
 
 
-export default function Sidebar() {
+function Sidebar() {
 
   const { users, setSelectedUser } = useChat()
   const [usersToRender, setUsersToRender] = useState(users)
@@ -71,3 +71,5 @@ export default function Sidebar() {
     </div>
   )
 }
+
+export { Sidebar }
