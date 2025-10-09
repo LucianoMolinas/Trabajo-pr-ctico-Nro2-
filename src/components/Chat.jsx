@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useChat } from "../context/ChatContext"
+import { useChat } from "../context/chatContext"
 import { useNavigate } from "react-router-dom"
 
 export default function Chat() {
