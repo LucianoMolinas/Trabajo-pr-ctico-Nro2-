@@ -1,5 +1,5 @@
-import { Chat } from "../components/Chat"
 import { Sidebar } from "../components/Sidebar.jsx"
+import { Chat } from "../components/Chat"
 import { ChatProvider } from "../context/chatContext"
 
 
