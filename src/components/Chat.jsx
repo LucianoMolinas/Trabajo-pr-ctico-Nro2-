@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useChat } from "../context/chatContext"
 import { useNavigate } from "react-router-dom"
 
-export default function Chat() {
+function Chat() {
 
   const [msg, setMsg] = useState("")
 
@@ -116,3 +116,5 @@ export default function Chat() {
   )
 
 }
+
+export { Chat }

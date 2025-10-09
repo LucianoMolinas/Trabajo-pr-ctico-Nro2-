@@ -1,4 +1,4 @@
-import Chat from "../components/Chat"
+import { Chat } from "../components/Chat"
 import { Sidebar } from "../components/Sidebar.jsx"
 import { ChatProvider } from "../context/chatContext"
 
