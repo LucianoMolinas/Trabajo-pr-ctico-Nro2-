@@ -76,15 +76,27 @@ function Chat() {
   return (
     <>
       {
-        showPopup === true && <section className="cont-popup">
+        showPopup === true &&
+        <section className="cont-popup">
+
           <div className="popup">
-            <h2>Configuración de Chat</h2>
-            <h3>Cambiar tema:</h3>
-            <select name="" id="">
-              <option value="">Claro</option>
-              <option value="">Oscuro</option>
-            </select><br></br>
-            <button onClick={handleClosePopup}>Cerrar</button>
+            <div className="div-img">
+              <img className="img-setting" src="setting.jpg" alt="" />
+            </div>
+            <div className="div-setting">
+              <button onClick={handleClosePopup} className="close-popup">Cerrar</button>
+
+              <h1 >Ajustes del chat</h1>
+              <h2>Cambiar el tema</h2>
+              <div>
+                <button className="light-popup" type="button">Claro</button> <button className="dark-popup">Oscuro</button>
+              </div>
+              <h2>Tamaño de fuente</h2>
+              <div>
+                <button className="little-popup">Pequeño</button><button className="medium-popup">Mediano</button>
+                <button className="big-popup">Grande</button>
+              </div>
+            </div>
           </div>
 
         </section>

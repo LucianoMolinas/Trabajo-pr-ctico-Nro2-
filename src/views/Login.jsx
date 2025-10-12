@@ -11,7 +11,7 @@ const Login = () => {
 
 
 
-  const PASS = "Newells"
+  const PASS = "pepe123"
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn")

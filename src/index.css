@@ -308,11 +308,19 @@ form.text-info {
 }
 
 .popup {
-  background-color: whitesmoke;
-  padding: 20px;
-  border-radius: 10px;
-  width: 60%;
+  background-color: white;
+
+  border-radius: 20px;
+  width: 40%;
+  height: 40%;
   box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.205);
+  display: flex;
+
+
+
+
+
+
 }
 
 .popup button {
@@ -323,6 +331,162 @@ form.text-info {
   color: white;
   margin-top: 10px;
 }
+
+
+.img-setting {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 100px;
+
+}
+
+
+.div-img,
+.div-setting {
+
+  flex: 1
+}
+
+
+
+.popup .light-popup {
+
+
+  border: 2px solid black;
+
+  border-radius: 26px;
+  background-color: white;
+  color: black;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  margin-left: 90px;
+  padding: 8px 32px 8px 32px;
+}
+
+
+.popup .dark-popup {
+
+  border: none;
+  border-radius: 26px;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  margin-left: 10px;
+  padding: 10px 30px 10px 30px;
+}
+
+
+.popup .dark-popup:hover {
+
+  background-color: grey;
+
+}
+
+.popup .light-popup:hover {
+
+  background-color: #d4d4d4;
+
+
+}
+
+.popup .little-popup {
+
+  padding: 10px;
+  border: none;
+  border-radius: 26px;
+  background-color: #31a9ff;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  margin-left: 50px;
+  margin-right: 10px;
+}
+
+
+.popup .medium-popup {
+
+  padding: 10px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 26px;
+  background-color: #31a9ff;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  margin-right: 10px;
+
+}
+
+.popup .big-popup {
+
+  padding: 10px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 26px;
+  background-color: #31a9ff;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+
+}
+
+.popup .big-popup:hover {
+
+  background-color: #0056b3;
+
+}
+
+.popup .medium-popup:hover {
+
+  background-color: #0056b3;
+
+}
+
+.popup .little-popup:hover {
+
+  background-color: #0056b3;
+
+}
+
+
+
+
+
+
+
+
+
+.popup h1 {
+
+  margin-left: 80px;
+  margin-top: 20px;
+}
+
+
+
+
+.popup .close-popup {
+
+
+  margin-left: 312px;
+  cursor: pointer;
+}
+
+
+.popup h2 {
+
+  margin-left: 100px;
+  margin-top: 40px;
+}
+
+
 
 /* Resposive mínimo para mobile */
 @media (max-width: 480px) {
