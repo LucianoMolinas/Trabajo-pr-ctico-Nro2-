@@ -316,11 +316,6 @@ form.text-info {
   box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.205);
   display: flex;
 
-
-
-
-
-
 }
 
 .popup button {
@@ -349,35 +344,12 @@ form.text-info {
 }
 
 
+.switch {
 
-.popup .light-popup {
+  padding-left: 160px;
 
-
-  border: 2px solid black;
-
-  border-radius: 26px;
-  background-color: white;
-  color: black;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color 0.1s;
-  margin-left: 90px;
-  padding: 8px 32px 8px 32px;
 }
 
-
-.popup .dark-popup {
-
-  border: none;
-  border-radius: 26px;
-  background-color: black;
-  color: white;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color 0.1s;
-  margin-left: 10px;
-  padding: 10px 30px 10px 30px;
-}
 
 
 .popup .dark-popup:hover {
@@ -484,8 +456,23 @@ form.text-info {
 
   margin-left: 100px;
   margin-top: 40px;
+  margin-bottom: 30px;
 }
 
+#dark {
+
+  background-color: black;
+  color: white;
+
+
+}
+
+#light {
+
+  background-color: white;
+  color: black;
+
+}
 
 
 /* Resposive mínimo para mobile */

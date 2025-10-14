@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react"
 import { useChat } from "../context/chatContext"
+import { useThemeContext } from "../context/ThemeContext"
 
 
 function Sidebar() {
@@ -24,9 +25,11 @@ function Sidebar() {
     setUsersToRender(result)
   }
 
+  const { contextTheme } = useThemeContext()
+
 
   return (
-    <div className="sidebar">
+    <div className="sidebar" id={contextTheme}>
 
       <input
         type="text"

@@ -1,11 +1,21 @@
 import { useState } from "react"
 import { useChat } from "../context/chatContext"
 import { Link, useNavigate } from "react-router-dom"
+import ReactSwitch from "react-switch"
+import { useThemeContext } from "../context/ThemeContext"
+
+
+
+
+
 
 function Chat() {
 
   const [msg, setMsg] = useState("")
   const [showPopup, setShowPopup] = useState(false)
+  const [checked, setChecked] = useState(false)
+
+
   // 1. Obtenemos del contexto todo lo necesario
   const { users, selectedUser, setUsers } = useChat()
 
@@ -16,7 +26,7 @@ function Chat() {
 
   if (!user) {
     return (
-      <div className="user-not-found">
+      <div className="user-not-found" >
         <p>No hay usuario seleccionado...</p>
       </div>
     )
@@ -67,21 +77,26 @@ function Chat() {
     setShowPopup(false)
   }
 
+  const { contextTheme, setContextTheme } = useThemeContext()
+
+  const handleSwitch = (nextChecked) => {
+
+    setContextTheme((state) => (state === "light" ? "dark" : "light"))
+    setChecked(nextChecked)
 
 
-
-
+  }
 
 
   return (
     <>
       {
         showPopup === true &&
-        <section className="cont-popup">
+        <section className="cont-popup" >
 
-          <div className="popup">
+          <div className="popup" id={contextTheme}>
             <div className="div-img">
-              <img className="img-setting" src="setting.jpg" alt="" />
+              <img className="img-setting" src="setting02.png" alt="" />
             </div>
             <div className="div-setting">
               <button onClick={handleClosePopup} className="close-popup">Cerrar</button>
@@ -89,11 +104,30 @@ function Chat() {
               <h1 >Ajustes del chat</h1>
               <h2>Cambiar el tema</h2>
               <div>
-                <button className="light-popup" type="button">Claro</button> <button className="dark-popup">Oscuro</button>
+                <ReactSwitch
+                  checked={checked}
+                  onChange={handleSwitch}
+                  onColor="#86d3ff"
+                  onHandleColor="#2693e6"
+                  handleDiameter={30}
+                  uncheckedIcon={false}
+                  checkedIcon={false}
+                  boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+                  activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+                  height={20}
+                  width={48}
+                  className="react-switch"
+                  id="material-switch"
+
+
+
+
+                />
               </div>
               <h2>Tamaño de fuente</h2>
-              <div>
-                <button className="little-popup">Pequeño</button><button className="medium-popup">Mediano</button>
+              <div >
+                <button className="little-popup">Pequeño</button>
+                <button className="medium-popup">Mediano</button>
                 <button className="big-popup">Grande</button>
               </div>
             </div>
@@ -101,8 +135,8 @@ function Chat() {
 
         </section>
       }
-      <div className="chat">
-        <header className="chat-header">
+      <div className="chat" >
+        <header className="chat-header" id={contextTheme}>
           <div>
             <div className="chat-user">
               <img
@@ -114,7 +148,7 @@ function Chat() {
               {user.lastSeen !== "" && <span className="last-seen">Last seen: {user.lastSeen}</span>}
             </div>
           </div>
-          <div className="chat-actions">
+          <div className="chat-actions" >
             <button title="Camera">📷</button>
             <button title="Gallery">🖼️</button>
             <button title="Settings" onClick={handleShowPopup}>⚙️</button>
@@ -123,7 +157,7 @@ function Chat() {
           </div>
         </header>
 
-        <section className="chat-messages">
+        <section className="chat-messages" id={contextTheme}>
           {user.messages.map((message) => (
             <div className="message" key={message.id}>
               <p>{message.text}</p>
@@ -132,7 +166,7 @@ function Chat() {
           ))}
         </section>
 
-        <footer className="chat-footer">
+        <footer className="chat-footer" id={contextTheme}>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
