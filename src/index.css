@@ -159,6 +159,16 @@
   max-width: 50%;
 }
 
+
+.dark1 .message {
+  background-color: red;
+  padding: 5px 10px;
+  border-radius: 8px;
+  align-self: flex-end;
+  max-width: 50%;
+}
+
+
 .message .time {
   font-size: 9px;
   display: block;
@@ -318,6 +328,8 @@ form.text-info {
 
 }
 
+
+
 .popup button {
   padding: 3px 12px;
   background-color: rgb(136, 163, 163);
@@ -344,10 +356,9 @@ form.text-info {
 }
 
 
-.switch {
+.react-switch {
 
   padding-left: 160px;
-
 }
 
 
@@ -370,11 +381,11 @@ form.text-info {
   padding: 10px;
   border: none;
   border-radius: 26px;
-  background-color: #31a9ff;
-  color: white;
+  background-color: #fc8c7a;
+  color: whitesmoke;
   font-size: 15px;
   cursor: pointer;
-  transition: background-color 0.1s;
+
   margin-left: 50px;
   margin-right: 10px;
 }
@@ -386,14 +397,16 @@ form.text-info {
   margin-left: 10px;
   border: none;
   border-radius: 26px;
-  background-color: #31a9ff;
-  color: white;
+  background-color: #fc8c7a;
+  color: whitesmoke;
   font-size: 20px;
   cursor: pointer;
-  transition: background-color 0.1s;
+
   margin-right: 10px;
 
 }
+
+.input-footer {}
 
 .popup .big-popup {
 
@@ -401,34 +414,37 @@ form.text-info {
   margin-left: 10px;
   border: none;
   border-radius: 26px;
-  background-color: #31a9ff;
-  color: white;
+  background-color: #fc8c7a;
+  color: whitesmoke;
   font-size: 30px;
   cursor: pointer;
-  transition: background-color 0.1s;
+
 
 }
 
 .popup .big-popup:hover {
 
-  background-color: #0056b3;
+  background-color: #ff3754;
 
 }
 
 .popup .medium-popup:hover {
 
-  background-color: #0056b3;
+  background-color: #ff3754;
 
 }
 
 .popup .little-popup:hover {
 
-  background-color: #0056b3;
+  background-color: #ff3754;
 
 }
 
 
+.button-chat {
 
+  color: black;
+}
 
 
 
@@ -449,6 +465,11 @@ form.text-info {
 
   margin-left: 312px;
   cursor: pointer;
+}
+
+.popup .close-popup:hover {
+
+  background-color: #ff3754;
 }
 
 
@@ -473,6 +494,177 @@ form.text-info {
   color: black;
 
 }
+
+.dark1 {
+
+  background-color: black;
+  color: white;
+
+
+}
+
+.light1 {
+
+  background-color: white;
+  color: black;
+
+}
+
+.fontmin {
+  font-size: 15px;
+
+}
+
+.fontmed {
+  font-size: 30px;
+
+}
+
+
+.fontmax {
+  font-size: 50px;
+
+}
+
+
+.div-title {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 60%;
+}
+
+.div-return {
+  width: 40%;
+  display: flex;
+  justify-content: end;
+  padding: 15px 15px 15px 15px;
+}
+
+.h1 {
+  font-family: tt nooks system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  letter-spacing: 5px;
+}
+
+.body {
+  background: linear-gradient(135deg, #159f30, #00c6ff);
+  color: white;
+}
+
+.header {
+  background: linear-gradient(135deg, #159f30, #00c6ff);
+  color: white;
+  height: 100px;
+  display: flex;
+}
+
+.section-funcion,
+.section-tecnologia {
+  display: flex;
+}
+
+.img1 {
+  height: 300px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+.div-img {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+
+.div-function1 {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logos {
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+.first-p {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  margin-right: 40px;
+}
+
+.first-ul {
+  padding-left: 80px;
+  font-size: 20px;
+  margin-right: 40px;
+}
+
+.li-tec,
+.h2-tec {
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.li-tec {
+  font-size: 20px;
+}
+
+.div-tec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 200px;
+}
+
+.li-fun {
+  margin-bottom: 10px;
+}
+
+.h2-fun {
+  margin-left: 30px;
+}
+
+.h2-tec {
+  margin-bottom: 20px;
+}
+
+.section-mejoras {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ul-mej li {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+
+.section-funcion,
+.section-mejoras,
+.section-tecnologia {
+  margin-top: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Resposive mínimo para mobile */

@@ -29,12 +29,12 @@ function Sidebar() {
 
 
   return (
-    <div className="sidebar" id={contextTheme}>
+    <div className={`sidebar ${contextTheme}`} >
 
       <input
         type="text"
         placeholder="Search..."
-        className="search"
+        className={`search ${contextTheme}`}
         onChange={handleChange}
       />
       {usersToRender.length === 0 && (

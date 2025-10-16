@@ -11,9 +11,13 @@ import { useThemeContext } from "../context/ThemeContext"
 
 function Chat() {
 
+
+
   const [msg, setMsg] = useState("")
   const [showPopup, setShowPopup] = useState(false)
   const [checked, setChecked] = useState(false)
+
+  const [font, setFont] = useState("fontmin")
 
 
   // 1. Obtenemos del contexto todo lo necesario
@@ -77,13 +81,26 @@ function Chat() {
     setShowPopup(false)
   }
 
+  const handleMedium = () => {
+    setFont("fontmed")
+
+  }
+  const handleMin = () => {
+    setFont("fontmin")
+
+  }
+  const handleMax = () => {
+    setFont("fontmax")
+
+  }
+
+
   const { contextTheme, setContextTheme } = useThemeContext()
 
   const handleSwitch = (nextChecked) => {
 
-    setContextTheme((state) => (state === "light" ? "dark" : "light"))
+    setContextTheme((state) => (state === "" ? "dark1" : ""))
     setChecked(nextChecked)
-
 
   }
 
@@ -94,7 +111,7 @@ function Chat() {
         showPopup === true &&
         <section className="cont-popup" >
 
-          <div className="popup" id={contextTheme}>
+          <div className={`popup ${contextTheme}`}>
             <div className="div-img">
               <img className="img-setting" src="setting02.png" alt="" />
             </div>
@@ -119,16 +136,13 @@ function Chat() {
                   className="react-switch"
                   id="material-switch"
 
-
-
-
                 />
               </div>
               <h2>Tamaño de fuente</h2>
               <div >
-                <button className="little-popup">Pequeño</button>
-                <button className="medium-popup">Mediano</button>
-                <button className="big-popup">Grande</button>
+                <button className="little-popup" onClick={handleMin}>Pequeño</button>
+                <button className="medium-popup" onClick={handleMedium} >Mediano</button>
+                <button className="big-popup" onClick={handleMax}>Grande</button>
               </div>
             </div>
           </div>
@@ -136,7 +150,7 @@ function Chat() {
         </section>
       }
       <div className="chat" >
-        <header className="chat-header" id={contextTheme}>
+        <header className={`chat-header ${contextTheme}`}>
           <div>
             <div className="chat-user">
               <img
@@ -153,26 +167,27 @@ function Chat() {
             <button title="Gallery">🖼️</button>
             <button title="Settings" onClick={handleShowPopup}>⚙️</button>
             <Link to="/help" title="Help">❓</Link>
-            <button onClick={handleLogout}>Cerrar sesión</button>
+            <button className={`button-chat ${contextTheme}`} onClick={handleLogout}>Cerrar sesión</button>
           </div>
         </header>
 
-        <section className="chat-messages" id={contextTheme}>
+        <section className="chat-messages" >
           {user.messages.map((message) => (
-            <div className="message" key={message.id}>
-              <p>{message.text}</p>
+            <div className={`message ${contextTheme} `} key={message.id}>
+              <p className={`${font}`} >{message.text}</p>
               <span className="time">{message.time}</span>
             </div>
           ))}
         </section>
 
-        <footer className="chat-footer" id={contextTheme}>
+        <footer className={`chat-footer ${contextTheme}`}>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Enter text here..."
               onChange={handleChange}
               value={msg}
+              className={`input-footer ${contextTheme}`}
             />
             <button>➤</button>
           </form>
