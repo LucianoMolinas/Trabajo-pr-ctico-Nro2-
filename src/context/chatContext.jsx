@@ -3,13 +3,6 @@ import { createContext, useContext, useState, useEffect } from "react"
 
 const ChatContext = createContext()
 
-
-
-
-
-
-
-
 const ChatProvider = ({ children }) => {
 
   const [users, setUsers] = useState([])
@@ -26,7 +19,7 @@ const ChatProvider = ({ children }) => {
 
         {
           id: 1,
-          name: "Juan perez",
+          name: "Juan pere",
           status: "online",
           lastSeen: "",
           messages: [
