@@ -12,18 +12,14 @@ import { useThemeContext } from "../context/ThemeContext"
 function Chat() {
 
 
-
   const [msg, setMsg] = useState("")
   const [showPopup, setShowPopup] = useState(false)
   const [checked, setChecked] = useState(false)
 
   const [font, setFont] = useState("fontmin")
 
-
-  // 1. Obtenemos del contexto todo lo necesario
   const { users, selectedUser, setUsers } = useChat()
 
-  // 2. Buscamos el usuario activo
   const user = users.find(u => u.id === selectedUser)
 
   const navigate = useNavigate()
@@ -37,13 +33,12 @@ function Chat() {
   }
 
 
-  // 3. Manejo del input
+
   const handleChange = (event) => {
     setMsg(event.target.value)
   }
 
 
-  // 4. Cuando enviamos el formulario
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -54,14 +49,13 @@ function Chat() {
       time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
     }
 
-    // ✅ Actualizamos el estado de manera INMUTABLE
     const updatedUsers = users.map(u =>
       u.id === user.id
         ? { ...u, messages: [...u.messages, newMessage] }
         : u
     )
 
-    setUsers(updatedUsers) // esto dispara el useEffect del contexto que guarda en localStorage
+    setUsers(updatedUsers)
     setMsg("")
 
 
@@ -117,7 +111,6 @@ function Chat() {
             </div>
             <div className="div-setting">
               <button onClick={handleClosePopup} className="close-popup">Cerrar</button>
-
               <h1 >Ajustes del chat</h1>
               <h2>Cambiar el tema</h2>
               <div>
@@ -134,7 +127,7 @@ function Chat() {
                   height={20}
                   width={48}
                   className="react-switch"
-                  id="material-switch"
+
 
                 />
               </div>

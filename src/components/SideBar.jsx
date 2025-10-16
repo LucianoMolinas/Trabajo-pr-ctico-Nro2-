@@ -9,12 +9,10 @@ function Sidebar() {
   const { users, setSelectedUser } = useChat()
   const [usersToRender, setUsersToRender] = useState(users)
 
-  // 🔄 Cada vez que cambien los usuarios globales, actualizamos la lista a renderizar
+
   useEffect(() => {
     setUsersToRender(users)
   }, [users])
-
-  // 🔍 Filtro por búsqueda
 
 
   const handleChange = (event) => {
@@ -30,7 +28,6 @@ function Sidebar() {
 
   return (
     <div className={`sidebar ${contextTheme}`} >
-
       <input
         type="text"
         placeholder="Search..."
